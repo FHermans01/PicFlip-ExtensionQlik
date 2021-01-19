@@ -14,8 +14,9 @@ define( [], function() {
 
 	function setUpImages($element, layout){
 		$.each(layout.qHyperCube.qDataPages[0].qMatrix, function(index, value){
-		var ending = (value[0].qText.slice(value[0].qText.length-4, value[0].qText.length));
-		 if(ending.match(/^(jpeg|.jpg|.png|.gif|apng|.svg|.bmp|.ico)$/)){
+		// var ending = (value[0].qText.slice(value[0].qText.length-4, value[0].qText.length));
+		//  if(ending.match(/^(jpeg|.jpg|.png|.gif|apng|.svg|.bmp|.ico)$/)){
+		 if(value[0].qText.match(/\.(jpeg|jpg|png|gif|apng|svg|bmp|ico)/gi)){
 				$element.find('#img_front' + index).attr('src', value[0].qText);
 				$element.find('#img_back' + index).attr('src', value[0].qText);
 			} else {
